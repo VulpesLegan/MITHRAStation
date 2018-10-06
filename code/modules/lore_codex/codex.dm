@@ -1,12 +1,11 @@
 // Inherits from /book/ so it can fit on bookshelves.
-/obj/item/weapon/book/codex // Vorestation Edits throughout this object.
-	name = "The Traveler's Guide to Human Space: Virgo-Erigone Edition"
-	desc = "Contains useful information about the world around you.  It seems to have been written for travelers to Virgo-Erigone, human or not. It also \
-	has the words 'Don't Panic' in small, friendly letters on the cover."
+/obj/item/weapon/book/codex
+	name = "Generic Codex: Electric Bugaloo"
+	desc = "If you can read this, something is broken!"
 	icon_state = "codex"
 	unique = TRUE
 	var/datum/codex_tree/tree = null
-	var/root_type = /datum/lore/codex/category/main_virgo_lore	//Runtimes on codex_tree.dm, line 18 with a null here
+	var/root_type = /datum/lore/codex/category/main_vir_lore	//Runtimes on codex_tree.dm, line 18 with a null here
 
 /obj/item/weapon/book/codex/initialize()
 	tree = new(src, root_type)
@@ -18,12 +17,12 @@
 	icon_state = "[initial(icon_state)]-open"
 	tree.display(user)
 
-/obj/item/weapon/book/codex/lore/vir // Vorestation Edits throughout this object.
-	name = "The Traveler's Guide to Human Space: Virgo-Erigone Edition"
-	desc = "Contains useful information about the world around you.  It seems to have been written for travelers to Virgo-Erigone, human or not. It also \
+/obj/item/weapon/book/codex/lore/vir
+	name = "The Traveler's Guide to Human Space: Vir Edition"
+	desc = "Contains useful information about the world around you.  It seems to have been written for travelers to Vir, human or not.   It also \
 	has the words 'Don't Panic' in small, friendly letters on the cover."
 	icon_state = "codex"
-	root_type = /datum/lore/codex/category/main_virgo_lore
+	root_type = /datum/lore/codex/category/main_vir_lore
 
 /obj/item/weapon/book/codex/lore/robutt
 	name = "A Buyer's Guide to Artificial Bodies"
@@ -39,7 +38,6 @@
 	w_class = ITEMSIZE_SMALL
 	root_type = /datum/lore/codex/category/main_news
 
-/* //VORESTATION REMOVAL
 // Combines SOP/Regs/Law
 /obj/item/weapon/book/codex/corp_regs
 	name = "NanoTrasen Regulatory Compendium"
@@ -48,4 +46,3 @@
 	icon_state = "corp_regs"
 	root_type = /datum/lore/codex/category/main_corp_regs
 	throwforce = 5 // Throw the book at 'em.
-*/
