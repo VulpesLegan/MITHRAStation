@@ -39,7 +39,7 @@ var/href_logfile		= null
 // var/const/starsys_name	= "Vir"
 var/const/game_version	= "MITHRAStation"
 var/changelog_hash		= ""
-var/game_year			= (text2num(time2text(world.realtime, "YYYY")) + 544)
+var/game_year			= (text2num(time2text(world.realtime, "YYYY")) + 546)
 var/round_progressing = 1
 
 var/master_mode       = "extended" // "extended"
