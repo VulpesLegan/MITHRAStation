@@ -15,7 +15,6 @@
 	return
 // END - DO NOT EDIT PROTOTYPE
 
-
 /* TEMPLATE
 // ckey:Character Name
 /obj/item/weapon/storage/box/fluff/charactername
@@ -28,6 +27,7 @@
 		/obj/item/clothing/under/thing4)
 */
 
+/*
 // BeyondMyLife:Cassandra Selones Spawn Kit
 /obj/item/weapon/storage/box/fluff/cassandra
 	name = "Cassandra Selone's Spawn Kit"
@@ -225,6 +225,7 @@
 	has_items = list(
 		/obj/item/clothing/accessory/medal/bronze_heart,
 		/obj/item/clothing/gloves/ring/seal/signet/fluff/vietsi)
+*/
 
 /*
 Swimsuits, for general use, to avoid arriving to work with your swimsuit.
