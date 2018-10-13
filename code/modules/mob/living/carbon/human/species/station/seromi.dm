@@ -43,13 +43,13 @@
 
 	slowdown = -1
 	snow_movement = -2	// Ignores light snow
-	total_health = 50
+	total_health = 75	// Increased from 50 to make them less super killable
 	brute_mod = 1.35
 	burn_mod =  1.35
 	mob_size = MOB_SMALL
 	pass_flags = PASSTABLE
 	holder_type = /obj/item/weapon/holder/human
-//	short_sighted = 1
+	short_sighted = 1	//Added back in, makes players use sonar ping
 	gluttonous = 1
 	blood_volume = 400
 	hunger_factor = 0.2

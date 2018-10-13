@@ -318,6 +318,7 @@
 	icobase_tail = 1
 
 	inherent_verbs = list(
+		/mob/proc/weaveWeb,
 		/mob/proc/weaveWebBindings)
 
 	min_age = 18

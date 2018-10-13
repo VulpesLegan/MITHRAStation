@@ -19,18 +19,16 @@ obj/item/clothing/suit/web_bindings
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL
 
-/* //Commenting all this out, as people keep abusing it. Sorry!
 mob/proc/weaveWeb()
 	set name = "Weave Web"
 	set category = "Species Powers"
-	if(nutrition >= 500) //People decided to abuse it. Sorry. It was asked to be made so it couldn't be spammed, and what do ya know, people are spamming it everywhere.
+	if(nutrition >= 500)
 		src.visible_message("<span class='notice'>\the [src] weaves a web from their spinneret silk.</span>")
 		nutrition -= 500
 		spawn(30) //3 seconds to form
 		new /obj/effect/spider/stickyweb(src.loc)
 	else
 		src << "You do not have enough nutrition to create webbing!"
-*/
 
 mob/proc/weaveWebBindings()
 	set name = "Weave Web Bindings"

@@ -6,10 +6,11 @@
 	tail = "tail"
 	icobase_tail = 1
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/claws, /datum/unarmed_attack/bite/sharp)
-	//darksight = 8
-	//slowdown = -0.5
+	darksight = 5
+	slowdown = -0.3		//Fast, but not as fast as Taj
 	//brute_mod = 1.15
-	//burn_mod =  1.15
+	burn_mod =  1.15	//Fur is flammable
+	metabolic_rate = 1.2
 	//gluttonous = 1
 	num_alternate_languages = 3
 	secondary_langs = list(LANGUAGE_SAGARU)
@@ -27,6 +28,26 @@
 	racial tensions which has resulted in more than a number of wars and outright attempts at genocide. Sergals have an incredibly long \
 	lifespan, but due to their lust for violence, only a handful have ever survived beyond the age of 80, such as the infamous and \
 	legendary General Rain Silves who is claimed to have lived to 5000."
+
+	body_temperature = 315	//Cold resistant and flammable due to higher body temp, but not as high as Taj.
+
+	cold_level_1 = 230 //Default 260	//Not as resistant as Taj
+	cold_level_2 = 170 //Default 200
+	cold_level_3 = 90  //Default 120
+
+	heat_level_1 = 340 //Default 360	//Not as prone to overheat as Taj
+	heat_level_2 = 390 //Default 400
+	heat_level_3 = 850 //Default 1000
+
+
+	breath_cold_level_1 = 180	//Default 240 - Lower is better
+	breath_cold_level_2 = 100	//Default 180
+	breath_cold_level_3 = 60	//Default 100
+
+
+	breath_heat_level_1 = 360	//Default 380 - Higher is better
+	breath_heat_level_2 = 430	//Default 450
+	breath_heat_level_3 = 1000	//Default 1250
 
 	primitive_form = "Saru"
 
@@ -66,17 +87,20 @@
 	deform = 'icons/mob/human_races/r_def_akula.dmi'
 	tail = "tail"
 	icobase_tail = 1
-	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/claws, /datum/unarmed_attack/bite/sharp)
-	//darksight = 8
+	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/claws, /datum/unarmed_attack/bite/strong)
+	darksight = 7	//Sharks have good darkvision
 	//slowdown = -0.5
 	//brute_mod = 1.15
 	//burn_mod =  1.15
 	//gluttonous = 1
+	water_movement = -5			//Sharks swim really fast
+	siemens_coefficient = 1.5	//Sharks are more sensitive to electrical signals, and they're aquatic. Seems a reasonable tradeoff.
 	num_alternate_languages = 3
 	secondary_langs = list(LANGUAGE_SKRELLIAN)
 	name_language = LANGUAGE_SKRELLIAN
 	color_mult = 1
 	inherent_verbs = list(/mob/living/proc/shred_limb)
+	assisted_langs = list(LANGUAGE_EAL, LANGUAGE_TERMINUS, LANGUAGE_SKRELLIANFAR, LANGUAGE_ROOTLOCAL, LANGUAGE_ROOTGLOBAL, LANGUAGE_VOX)	//KTT edit: Removes Skrellian from assisted languages as a patch
 
 	min_age = 18
 	max_age = 80
@@ -158,6 +182,7 @@
 	num_alternate_languages = 3
 	secondary_langs = list(LANGUAGE_TERMINUS)
 	name_language = LANGUAGE_TERMINUS
+	assisted_langs = list(LANGUAGE_EAL, LANGUAGE_SKRELLIAN, LANGUAGE_SKRELLIANFAR, LANGUAGE_ROOTLOCAL, LANGUAGE_ROOTGLOBAL, LANGUAGE_VOX)	//KTT edit: Zorren can speak Terminus unassisted.
 
 	min_age = 18
 	max_age = 80
@@ -197,6 +222,7 @@
 	num_alternate_languages = 3
 	secondary_langs = list(LANGUAGE_TERMINUS)
 	name_language = LANGUAGE_TERMINUS
+	assisted_langs = list(LANGUAGE_EAL, LANGUAGE_SKRELLIAN, LANGUAGE_SKRELLIANFAR, LANGUAGE_ROOTLOCAL, LANGUAGE_ROOTGLOBAL, LANGUAGE_VOX)	//KTT edit: Zorren can speak Terminus unassisted.
 
 	min_age = 18
 	max_age = 80
@@ -258,6 +284,22 @@
 
 	flesh_color = "#966464"
 	base_color = "#B43214"
+
+	cold_level_1 = 240 //Default 260 - Lower is better
+	cold_level_2 = 180 //Default 200
+	cold_level_3 = 100 //Default 120
+
+	breath_cold_level_1 = 220	//Default 240 - Lower is better
+	breath_cold_level_2 = 150	//Default 180
+	breath_cold_level_3 = 70	//Default 100
+
+	heat_level_1 = 380 //Default 360 - Higher is better
+	heat_level_2 = 420 //Default 400
+	heat_level_3 = 1050 //Default 1000
+
+	breath_heat_level_1 = 400	//Default 380 - Higher is better
+	breath_heat_level_2 = 480	//Default 450
+	breath_heat_level_3 = 1300	//Default 1250
 
 	min_age = 18
 	max_age = 80
