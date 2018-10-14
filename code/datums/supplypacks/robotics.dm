@@ -24,7 +24,8 @@
 	containername = "Robotics assembly"
 	access = access_robotics
 
-/*/datum/supply_packs/robotics/robolimbs_basic
+/*
+/datum/supply_packs/robotics/robolimbs_basic
 	name = "Basic robolimb blueprints"
 	contains = list(
 			/obj/item/weapon/disk/limb/morpheus,
