@@ -644,3 +644,7 @@
 /obj/item/weapon/paper/synthtech
 	name = "Information on Synthetic Fabricator Technology"
 	info = "In light of recent research funding, we at <B>Nanotrasen</B> have recently made the decision to offer our state of the art stations a chance at trying out new technology before it's released to the public. Unfortunately due to the unexpected loss of our most skilled station technicians, we have been unable to proceed with the promised construction and have instead decided to provide you with the materials to do so yourself. <I>Note: Nanotrasen or it's affiliates are not responsible for any sudden memory loss or irreplacable body parts lost due to the operation of such devices, we wish you luck with the research and will be expecting updates immediately.</I>"
+
+/obj/item/weapon/paper/manifest
+	name = "supply manifest"
+	var/is_copy = 1
