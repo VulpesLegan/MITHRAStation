@@ -64,6 +64,10 @@
 	if(air_group || (height==0)) return 1
 	if(istype(mover, /mob/living/simple_animal/hostile/giant_spider))
 		return 1
+	else if(ishuman(mover))
+		var/mob/living/carbon/human/human_mover = mover
+		if(istype(human_mover.species, /datum/species/spider))
+			return 1
 	else if(istype(mover, /mob/living))
 		if(prob(50))
 			mover << "<span class='warning'>You get stuck in \the [src] for a moment.</span>"
