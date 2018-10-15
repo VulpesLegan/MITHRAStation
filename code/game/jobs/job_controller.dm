@@ -282,6 +282,17 @@ var/global/datum/controller/occupations/job_master
 						Debug("DO player not old enough, Player: [player], Job:[job.title]")
 						continue
 
+					// // // BEGIN AEIOU EDIT // // //
+					/*
+					 * Theoretically fixes an issue where a player could join as a whitelisted job if it was selected before
+					 * the whitelist made them unable to select it. This only denies them the ability to spawn as the job, it
+					 * does not unset it in their preferences. ^Spitzer
+					 */
+					if(!is_job_whitelisted(player, job.title))
+						Debug("DO player not whitelisted for this job, Player: [player], Job: [job.title]")
+						continue
+					// // // END AEIOU EDIT // // //
+
 					// If the player wants that job on this level, then try give it to him.
 					if(player.client.prefs.GetJobDepartment(job, level) & job.flag)
 
@@ -434,6 +445,7 @@ var/global/datum/controller/occupations/job_master
 
 		H.job = rank
 		log_game("JOINED [key_name(H)] as \"[rank]\"")
+		log_game("SPECIES [key_name(H)] is a: \"[H.species.name]\"") //VOREStation Add
 
 		// If they're head, give them the account info for their department
 		if(H.mind && job.head_position)

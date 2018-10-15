@@ -59,7 +59,7 @@
 "bk" = (/obj/machinery/mass_driver{dir = 8; icon_state = "mass_driver"; id = "oldship_gun"},/turf/simulated/shuttle/plating,/area/derelict/ship)
 "bl" = (/obj/machinery/door/airlock/glass{name = "Pod Bay"},/turf/simulated/shuttle/floor/white,/area/derelict/ship)
 "bm" = (/obj/machinery/computer/pod{id = "oldship_gun"},/turf/simulated/shuttle/floor/white,/area/derelict/ship)
-"bn" = (/obj/structure/table/standard,/obj/item/weapon/screwdriver,/obj/machinery/light,/turf/simulated/shuttle/floor/white,/area/derelict/ship)
+"bn" = (/obj/structure/table/standard,/obj/item/weapon/tool/screwdriver,/obj/machinery/light,/turf/simulated/shuttle/floor/white,/area/derelict/ship)
 "bo" = (/obj/structure/table/standard,/obj/item/device/radio/off,/turf/simulated/shuttle/floor/white,/area/derelict/ship)
 "bp" = (/turf/simulated/mineral/vacuum,/area/mine/unexplored)
 "bq" = (/turf/simulated/mineral/floor/ignore_mapgen/vacuum,/area/mine/explored)
