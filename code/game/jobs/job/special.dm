@@ -97,7 +97,7 @@
 	minimal_access = list()
 	alt_titles = list("Comedian","Jester")
 	whitelist_only = 1
-	latejoin_only = 0
+	latejoin_only = 1
 
 	equip(var/mob/living/carbon/human/H)
 		if(!H)	return 0
@@ -137,7 +137,7 @@
 	minimal_access = list()
 	alt_titles = list("Performer","Interpretive Dancer")
 	whitelist_only = 1
-	latejoin_only = 0
+	latejoin_only = 1
 
 	equip(var/mob/living/carbon/human/H)
 		if(!H)	return 0
