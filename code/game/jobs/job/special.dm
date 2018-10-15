@@ -40,7 +40,7 @@
 		var/access = get_all_accesses()
 		return access
 
-/*/datum/job/centcom_visitor //For Pleasure // You mean for admin abuse... -Ace
+/datum/job/centcom_visitor //For Pleasure // You mean for admin abuse... -Ace // It's an admin Job, Ace... -HTG
 	title = "CentCom Visitor"
 	department = "Civilian"
 	head_position = 1
@@ -80,7 +80,7 @@
 
 	get_access()
 		var/access = get_all_accesses()
-		return access*/
+		return access
 
 /datum/job/clown
 	title = "Clown"
@@ -97,7 +97,7 @@
 	minimal_access = list()
 	alt_titles = list("Comedian","Jester")
 	whitelist_only = 1
-	latejoin_only = 1
+	latejoin_only = 0
 
 	equip(var/mob/living/carbon/human/H)
 		if(!H)	return 0
@@ -137,7 +137,7 @@
 	minimal_access = list()
 	alt_titles = list("Performer","Interpretive Dancer")
 	whitelist_only = 1
-	latejoin_only = 1
+	latejoin_only = 0
 
 	equip(var/mob/living/carbon/human/H)
 		if(!H)	return 0
