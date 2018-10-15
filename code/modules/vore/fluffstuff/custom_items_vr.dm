@@ -66,6 +66,7 @@
 	if(!parts)
 		qdel(src)
 
+/*
 //JoanRisu:Joan Risu
 /obj/item/weapon/flame/lighter/zippo/fluff/joan
 	name = "Federation Zippo Lighter"
@@ -108,6 +109,7 @@
 		playsound(user.loc, 'sound/weapons/punchmiss.ogg', 50, 1)
 		return 1
 	return 0
+*/
 
 //For General use
 /obj/item/weapon/sword/fluff/joanaria/scisword
@@ -117,8 +119,7 @@
 	icon_state = "scisword"
 	origin_tech = "materials=7"
 
-
-//john.wayne9392:Harmony Prechtl
+//For General use
 /obj/item/weapon/twohanded/fireaxe/fluff/mjollnir
 	name = "Mjollnir"
 	desc = "Large hammer that looks like it can do a great deal of damage if properly used."
@@ -127,6 +128,7 @@
 	origin_tech = "materials=7"
 	attack_verb = list("attacked", "hammered", "smashed", "slammed", "crushed")
 
+/*
 //JoanRisu:Joan Risu
 /obj/item/weapon/card/id/centcom/station/fluff/joanbadge
 	name = "Faded Badge"
@@ -193,6 +195,7 @@
 	from_suit = /obj/item/clothing/suit/space/void
 	to_helmet = /obj/item/clothing/head/helmet/space/void/engineering/hazmat/fluff/screehelm
 	to_suit = /obj/item/clothing/suit/space/void/engineering/hazmat/fluff/screespess
+*/
 
 //General Use
 /obj/item/weapon/flag
@@ -244,7 +247,7 @@
 	icon_override = 'icons/vore/custom_items_vr.dmi'
 	item_state = "flag_advent_mob"
 
-
+/*
 //Vorrakul: Kaitlyn Fiasco
 /obj/item/toy/plushie/mouse/fluff
 	name = "Mouse Plushie"
@@ -285,6 +288,7 @@
 	w_class = ITEMSIZE_NORMAL
 	damtype = HALLOSS
 	attack_verb = list("flogged", "whipped", "lashed", "disciplined", "chastised", "flayed")
+*/
 
 //General use
 /obj/item/weapon/melee/fluff/holochain/mass
@@ -292,7 +296,7 @@
 	force = 8
 	attack_verb = list("flogged", "whipped", "lashed", "flayed")
 
-
+/*
 // joey4298:Emoticon
 /obj/item/device/fluff/id_kit_mime
 	name = "Mime ID reprinter"
@@ -403,6 +407,7 @@
 	desc = "A small, steel tiara with a large, pink tourmaline gem in the center."
 	icon_state = "amp"
 	body_parts_covered = 0
+*/
 
 //Lots of people are using this now.
 /obj/item/clothing/accessory/collar/khcrystal
@@ -541,6 +546,7 @@
 	desc = "An elaborately made custom walking stick with a dark wooding core, a crimson red gemstone on its head and a steel cover around the bottom. you'd probably hear someone using this down the hall."
 	icon = 'icons/vore/custom_items_vr.dmi'
 
+/*
 //Stobarico - Alexis Bloise
 /obj/item/weapon/cane/wand
     name = "Ancient wand"
@@ -703,6 +709,7 @@
 
 /obj/item/weapon/implanter/reagent_generator/savannah
 	implant_type = /obj/item/weapon/implant/reagent_generator/savannah
+*/
 
 //SpoopyLizz: Roiz Lizden
 //I made this! Woo!
@@ -775,6 +782,7 @@
 
 		rimplant.reagents.remove_any(rimplant.transfer_amount)
 
+/*
 //Cameron653: Jasmine Lizden
 /obj/item/weapon/implant/reagent_generator/jasmine
 	name = "egg laying implant"
@@ -994,6 +1002,7 @@
 			visible_message("<span class='notice'>[src] [pick(rimplant.random_emote)].</span>")
 
 		rimplant.reagents.remove_any(rimplant.transfer_amount)
+*/
 
 /*
 /obj/item/weapon/implant/reagent_generator/pumila_nectar //Bugged. Two implants at once messes things up.
@@ -1011,6 +1020,7 @@
 /obj/item/weapon/implanter/reagent_generator/pumila_nectar
 	implant_type = /obj/item/weapon/implant/reagent_generator/pumila_nectar
 */
+
 //Egg item
 //-------------
 /obj/item/weapon/reagent_containers/food/snacks/egg/roiz
@@ -1085,6 +1095,7 @@
 	reagents.add_reagent("milk", 2)
 	bitesize = 2
 
+/*
 //PontifexMinimus: Lucius/Lucia Null
 /obj/item/weapon/fluff/dragor_dot
 	name = "supplemental battery"
@@ -1147,6 +1158,7 @@
 		qdel(I)
 		accessset = 1
 	..()
+*/
 
 //General use, Verk felt like sharing.
 /obj/item/clothing/glasses/fluff/science_proper
@@ -1225,8 +1237,8 @@
 	for(var/obj/item/device/perfect_tele_beacon/B in beacons)
 		B.tele_hand = null
 	beacons.Cut()
-	qdel_null(power_source)
-	qdel_null(spk)
+	QDEL_NULL(power_source)
+	QDEL_NULL(spk)
 	return ..()
 
 /obj/item/device/perfect_tele/update_icon()
@@ -1527,6 +1539,7 @@
 		return FALSE
 	return ..()
 
+/*
 //InterroLouis: Ruda Lizden
 /obj/item/clothing/accessory/badge/holo/detective/ruda
 	name = "Hisstective's Badge"
@@ -1598,6 +1611,7 @@
 			qdel(src) //One time use.
 	else //If not, do nothing.
 		to_chat(user,"<span class='warning'>You are unable to inject other people.</span>")
+*/
 
 //For 2 handed fluff weapons.
 /obj/item/weapon/material/twohanded/fluff //Twohanded fluff items.
@@ -1624,6 +1638,8 @@
 	base_icon = "riding_crop"
 	icon_state = "riding_crop0"
 	attack_verb = list("cropped","spanked","swatted","smacked","peppered")
+
+/*
 //1R1S: Malady Blanche
 /obj/item/weapon/material/twohanded/fluff/riding_crop/malady
 	name = "Malady's riding crop"
@@ -1796,7 +1812,7 @@
 /obj/item/weapon/storage/backpack/fluff/stunstaff/New()
 	..()
 	new /obj/item/weapon/melee/baton/fluff/stunstaff(src)
-
+*/
 
 /*
  * Awoo Sword
@@ -1903,6 +1919,7 @@
 	attack_verb = list("bapped", "thwapped", "bonked", "whacked")
 	icon_state = initial(icon_state)
 
+/*
 //SilencedMP5A5 - Serdykov Antoz
 /obj/item/device/modkit_conversion/hasd
 	name = "HASD EVA modification kit"
@@ -1942,9 +1959,9 @@
 
 	icon = 'icons/vore/custom_items_vr.dmi'
 	icon_state = "penlightlynn"
-	
+
 //Knightfall5:Ashley Kifer
 /obj/item/clothing/accessory/medal/nobel_science/fluff/ashley
 	name = "nobel sciences award"
 	desc = "A bronze medal which represents significant contributions to the field of science or engineering, this one has Ashley Kifer engraved on it."
-
+*/

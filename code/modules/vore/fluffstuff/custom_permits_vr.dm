@@ -6,6 +6,7 @@
 	to_chat(user, "You cannot reset the naming locks on [src]. It's issued by CentCom and totally tamper-proof!")
 	return
 
+/*
 // aerowing:Sebastian Aji
 /obj/item/clothing/accessory/permit/gun/fluff/sebastian_aji
 	name = "Sebastian Aji's Sidearm Permit"
@@ -88,4 +89,5 @@
 
 	The individual named above is licensed by the Nanotrasen Department of Civil Protection to openly carry XYZ. CONDITIONS.
 	This license expires on DD/Mon/YYYY and must be renewed by CentCom prior to this date."}
+*/
 */

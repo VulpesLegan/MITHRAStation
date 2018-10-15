@@ -1,3 +1,4 @@
+/* // ITS TIME TO STOP!
 /obj/mecha/combat/phazon/scree
 	desc = "A very, very shiny exosuit. This thing has been polished and waxed practically to a mirror finish."
 	name = "Scuttlebug"
@@ -19,4 +20,4 @@
 	name = "Scuttlebug wreckage"
 	icon_state = "scuttlebug-broken"
 	icon = 'icons/mecha/mecha_vr.dmi'
-
+*/

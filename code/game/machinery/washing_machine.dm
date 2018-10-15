@@ -38,12 +38,21 @@
 	set category = "Object"
 	set src in oview(1)
 
-	if(!istype(usr, /mob/living)) //ew ew ew usr, but it's the only way to check.
+// // // BEGIN AEIOU EDIT // // //
+	start_cycle(usr)
+
+/obj/machinery/washing_machine/AltClick(mob/user)
+	start_cycle(user)
+
+/obj/machinery/washing_machine/proc/start_cycle(mob/user)	//let's make this our own proc
+	if(!istype(user, /mob/living) || !in_range(src,user))
 		return
 
 	if(state != 4)
-		usr << "The washing machine cannot run in this state."
+		user << "The washing machine cannot run in this state."
 		return
+
+// // // END AEIOU EDIT // // //
 
 	if(locate(/mob,washing))
 		state = 8
@@ -90,7 +99,7 @@
 			return
 		if(default_unfasten_wrench(user, W, 40))
 			return
-	/*if(istype(W,/obj/item/weapon/screwdriver))
+	/*if(W.is_screwdriver())
 		panel = !panel
 		user << "<span class='notice'>You [panel ? "open" : "close"] the [src]'s maintenance panel</span>"*/
 	if(istype(W,/obj/item/weapon/pen/crayon) || istype(W,/obj/item/weapon/stamp))

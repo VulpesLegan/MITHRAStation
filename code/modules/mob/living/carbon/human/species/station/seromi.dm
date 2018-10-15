@@ -42,7 +42,9 @@
 	fire_icon_state = "generic" // Humanoid is too big for them and spriting a new one is really annoying.
 
 	slowdown = -1
+	item_slowdown_mod = 2	// Tiny birds don't like heavy things
 	snow_movement = -2	// Ignores light snow
+
 	total_health = 75	// Increased from 50 to make them less super killable
 	brute_mod = 1.35
 	burn_mod =  1.35
@@ -120,6 +122,11 @@
 	inherent_verbs = list(
 		/mob/living/carbon/human/proc/sonar_ping,
 		/mob/living/proc/hide
+		)
+
+	descriptors = list(
+		/datum/mob_descriptor/height = -3,
+		/datum/mob_descriptor/build = -3
 		)
 
 /datum/species/teshari/equip_survival_gear(var/mob/living/carbon/human/H)

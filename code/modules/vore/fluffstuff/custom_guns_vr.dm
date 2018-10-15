@@ -31,7 +31,6 @@
 
 */
 
-
 ////////////////////////////////////////////////////////////
 //////////////////// Projectile Weapons ////////////////////
 ////////////////////////////////////////////////////////////
@@ -113,6 +112,7 @@
 	matter = list(DEFAULT_WALL_MATERIAL = 2000)
 	projectile_type = /obj/item/projectile/beam/imperial
 
+/*
 // jertheace : Jeremiah 'Ace' Acacius
 /obj/item/weapon/gun/projectile/shotgun/pump/USDF/fluff/ace
 	name = "Ace's tactical shotgun" // D-model holds half as many shells as the normal version so as not OP as shit. Better than normal shotgun, worse than combat shotgun.
@@ -214,6 +214,7 @@
 	desc = "It's a palm sized gun. One of the few things that won't break an angel's wrists. Uses 10mm rounds."
 	caliber = "10mm"
 	ammo_type = /obj/item/ammo_casing/a10mm
+*/
 
 // For general use
 /obj/item/weapon/gun/projectile/automatic/stg
@@ -330,7 +331,7 @@
 		list(mode_name="lethal burst", burst=3, fire_delay=null, move_delay=4, burst_accuracy=list(0,0,0), dispersion=list(0.0, 0.2, 0.5), projectile_type=/obj/item/projectile/beam/burstlaser, modifystate="g44ekill", fire_sound='sound/weapons/Laser.ogg'),
 		)*/
 
-
+/*
 // molenar:Kari Akiren
 /obj/item/weapon/gun/projectile/shotgun/pump/rifle/fluff/kari_akiren
 	name = "clockwork rifle"
@@ -356,6 +357,7 @@
 	caliber = ".38"
 	ammo_type = /obj/item/ammo_casing/a38
 	preserve_item = FALSE
+*/
 
 //////////////////// Energy Weapons ////////////////////
 
@@ -618,6 +620,7 @@
 	name = "\improper SMG magazine (9mm armor-piercing)"
 	ammo_type = /obj/item/ammo_casing/a9mm/ap
 
+/* Seems to have been de-coded?
 /obj/item/ammo_magazine/m9mml/flash
 	name = "\improper SMG magazine (9mm flash)"
 	ammo_type = /obj/item/ammo_casing/a9mmf
@@ -629,6 +632,7 @@
 /obj/item/ammo_magazine/m9mml/practice
 	name = "\improper SMG magazine (9mm practice)"
 	ammo_type = /obj/item/ammo_casing/a9mmp
+*/
 
 //.357 special ammo
 /obj/item/ammo_magazine/s357/stun
@@ -741,10 +745,6 @@
 	var/recharging = 0
 
 	projectile_type = /obj/item/projectile/beam
-	firemodes = list(
-		list(mode_name="normal", fire_delay=12, projectile_type=/obj/item/projectile/beam, charge_cost = 300),
-		list(mode_name="low-power", fire_delay=8, projectile_type=/obj/item/projectile/beam/weaklaser, charge_cost = 60),
-		)
 
 /obj/item/weapon/gun/energy/frontier/unload_ammo(var/mob/user)
 	if(recharging)
@@ -776,6 +776,13 @@
 /obj/item/weapon/gun/energy/frontier/ex_act() //|rugged|
 	return
 
+//Needed to fix a bug with the holdout phaser
+/obj/item/weapon/gun/energy/frontier/basic
+	firemodes = list(
+		list(mode_name="normal", fire_delay=12, projectile_type=/obj/item/projectile/beam, charge_cost = 300),
+		list(mode_name="low-power", fire_delay=8, projectile_type=/obj/item/projectile/beam/weaklaser, charge_cost = 60),
+	)
+
 /obj/item/weapon/gun/energy/frontier/locked
 	desc = "An extraordinarily rugged laser weapon, built to last and requiring effectively no maintenance. Includes a built-in crank charger for recharging away from civilization. This one has a safety interlock that prevents firing while in proximity to the facility."
 	req_access = list(access_armory) //for toggling safety
@@ -805,6 +812,13 @@
 			to_chat(user, "<span class='warning'>The safety device prevents the gun from firing this close to the facility.</span>")
 			return 0
 	return ..()
+
+//Needed to fix a bug with the holdout phaser
+/obj/item/weapon/gun/energy/frontier/locked/basic
+	firemodes = list(
+		list(mode_name="normal", fire_delay=12, projectile_type=/obj/item/projectile/beam, charge_cost = 300),
+		list(mode_name="low-power", fire_delay=8, projectile_type=/obj/item/projectile/beam/weaklaser, charge_cost = 60),
+	)
 
 //Expeditionary Holdout Phaser
 /obj/item/weapon/gun/energy/frontier/locked/holdout

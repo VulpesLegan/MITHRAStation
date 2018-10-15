@@ -4,11 +4,23 @@
 	var/list/whitelisted_to		//List of ckeys that are allowed to pick this in charsetup.
 
 //////////////// For-specific-character fluff ones /////////////////
+
+/datum/robolimb/unbranded_cook
+    company = "Unbranded - D. Cook"
+    desc = "A limb of a flexible, black, rubber-like substance, stretched over a strong metal frame.. The manufacturer is not immediately clear. Perhaps it's custom work?"
+    icon = 'icons/mob/human_races/cyberlimbs/_fluff_/cook_custom.dmi'
+    unavailable_to_build = 1
+    whitelisted_to = list("zigfie")
+
+/obj/item/weapon/disk/limb/unbranded_cook
+	company = "Unbranded - D. Cook"
+
+/*
 // arokha : Aronai Kadigan
 /datum/robolimb/kitsuhana
 	company = "Kitsuhana"
 	desc = "This limb seems rather vulpine and fuzzy, with realistic-feeling flesh."
-	icon = 'icons/mob/human_races/cyberlimbs/_fluff_vr/aronai.dmi'
+	icon = 'icons/mob/human_races/cyberlimbs/_fluff_/aronai.dmi'
 	blood_color = "#5dd4fc"
 	includes_tail = 1
 	lifelike = 1
@@ -23,7 +35,7 @@
 /datum/robolimb/white_kryten
 	company = "White Kryten Cybernetics"
 	desc = "This limb feels realistic to the touch, with soft fur. Were it not for the bright orange lights embedded in it, you might have trouble telling it from a non synthetic limb!"
-	icon = 'icons/mob/human_races/cyberlimbs/_fluff_vr/serdykov.dmi'
+	icon = 'icons/mob/human_races/cyberlimbs/_fluff_/serdykov.dmi'
 	blood_color = "#ff6a00"
 	unavailable_to_build = 1
 	includes_tail = 1
@@ -32,11 +44,12 @@
 /obj/item/weapon/disk/limb/white_kryten
 	company = "White Kryten Cybernetics"
 
+
 // verkister : Rahwoof Boop
 /datum/robolimb/eggnerdltd
 	company = "Eggnerd Prototyping Ltd."
 	desc = "This limb has a slight salvaged handicraft vibe to it. The CE-marking on it is definitely not the standardized one, it looks more like a hand-written sharpie monogram."
-	icon = 'icons/mob/human_races/cyberlimbs/_fluff_vr/rahboop.dmi'
+	icon = 'icons/mob/human_races/cyberlimbs/_fluff_/rahboop.dmi'
 	blood_color = "#5e280d"
 	includes_tail = 1
 	unavailable_to_build = 1
@@ -45,6 +58,7 @@
 	company = "Eggnerd Prototyping Ltd."
 	icon = 'icons/obj/items_vr.dmi'
 	icon_state = "verkdisk"
+*/
 
 //////////////// General VS-only ones /////////////////
 /datum/robolimb/talon //They're buildable by default due to being extremely basic.
