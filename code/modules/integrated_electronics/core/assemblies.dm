@@ -1,5 +1,5 @@
-#define IC_COMPONENTS_BASE		20
-#define IC_COMPLEXITY_BASE		60
+#define IC_COMPONENTS_BASE		40
+#define IC_COMPLEXITY_BASE		120
 
 // Here is where the base definition lives.
 // Specific subtypes are in their own folder.
