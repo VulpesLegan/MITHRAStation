@@ -48,11 +48,11 @@
 	req_access = list(access_explorer)
 
 	starts_with = list(
-		/obj/item/clothing/under/explorer,
-		/obj/item/clothing/suit/storage/hooded/explorer,
-		/obj/item/clothing/mask/gas/explorer,
-		/obj/item/clothing/shoes/boots/winter/explorer,
 		/obj/item/clothing/gloves/black,
+		/obj/item/clothing/suit/storage/hooded/explorer,
+		/obj/item/clothing/shoes/boots/winter/explorer,
+		/obj/item/clothing/mask/gas/explorer,
+		/obj/item/clothing/under/explorer,
 		/obj/item/device/radio/headset/explorer,
 		/obj/item/device/flashlight,
 		/obj/item/device/gps/explorer,
@@ -60,23 +60,17 @@
 		/obj/item/device/geiger,
 		/obj/item/weapon/cell/device,
 		/obj/item/device/radio,
-		/obj/item/stack/marker_beacon/thirty,
-		/obj/item/weapon/material/knife/tacknife/survival, //VOREStation Add,
-		/obj/item/weapon/material/knife/machete, //VOREStation Add,
-		/obj/item/clothing/accessory/holster/machete, //VOREStation Add,
-		/obj/item/weapon/reagent_containers/food/snacks/liquidfood = 2) //VOREStation Add
+		/obj/item/stack/marker_beacon/thirty)
 
 /obj/structure/closet/secure_closet/explorer/initialize()
 	if(prob(50))
 		starts_with += /obj/item/weapon/storage/backpack
 	else
 		starts_with += /obj/item/weapon/storage/backpack/satchel/norm
-	/* VOREStation Removal - Always give both
 	if(prob(75))
 		starts_with += /obj/item/weapon/material/knife/tacknife/survival
 	else
 		starts_with += /obj/item/weapon/material/knife/machete
-	*/ //VOREStation Removal End
 	return ..()
 
 //SAR Lockers
@@ -99,7 +93,6 @@
 		/obj/item/weapon/reagent_containers/glass/bottle/inaprovaline,
 		/obj/item/weapon/reagent_containers/glass/bottle/antitoxin,
 		/obj/item/weapon/storage/belt/medical/emt,
-		/obj/item/weapon/material/knife/tacknife/survival, //VOREStation Add,
 		/obj/item/clothing/mask/gas,
 		/obj/item/clothing/suit/storage/hooded/wintercoat/medical/sar,
 		/obj/item/clothing/shoes/boots/winter/explorer,
@@ -120,6 +113,13 @@
 		/obj/item/device/geiger,
 		/obj/item/bodybag/cryobag)
 
+/obj/structure/closet/secure_closet/sar/initialize()
+	if(prob(75))
+		starts_with += /obj/item/weapon/material/knife/tacknife/survival
+	else
+		starts_with += /obj/item/weapon/material/knife/machete
+	return ..()
+
 //Pilot Locker
 
 /obj/structure/closet/secure_closet/pilot
@@ -128,7 +128,6 @@
 
 	starts_with = list(
 		/obj/item/weapon/storage/backpack/parachute,
-		/obj/item/weapon/material/knife/tacknife/survival,
 		/obj/item/clothing/head/pilot,
 		/obj/item/clothing/under/rank/pilot1,
 		/obj/item/clothing/suit/storage/toggle/bomber/pilot,
@@ -148,6 +147,10 @@
 		starts_with += /obj/item/weapon/storage/backpack
 	else
 		starts_with += /obj/item/weapon/storage/backpack/satchel/norm
+	if(prob(75))
+		starts_with += /obj/item/weapon/material/knife/tacknife/survival
+	else
+		starts_with += /obj/item/weapon/material/knife/machete
 	return ..()
 
 //Exotic Seeds Crate
