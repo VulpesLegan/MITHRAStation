@@ -1,0 +1,11 @@
+/obj/item/weapon/paper/reminder
+	name = "Just a friendly reminder."
+	info = "At the Southern-Cross research facility, we <I>(NanoTrasen)</I> are widely known for our great success and progress in the fields of <B>Phoron-Based</B> research. As a friendly reminder to the recently hired here aboard the station, we would be honored to refresh the memories of our dearly appreciated <B>Heads of Staff</B> with a number of guidelines you may have recieved during your brief trial period. <BR> <BR> As follows bellow, we have compiled a list of expected duties that the <B>Colony Director</B> and their <B>Heads of Staff</B> are gently reminded to keep in mind on a day-to-day basis. <BR> <BR> -TBA"
+
+/obj/item/weapon/paper/resleevingtech
+	name = "Information on Resleever Technology"
+	info = "In light of recent research funding, we at <B>Nanotrasen</B> have recently made the decision to offer our state of the art stations a chance at trying out new technology before it's released to the public. Unfortunately due to the unexpected loss of our most skilled station technicians, we have been unable to proceed with the promised construction and have instead decided to provide you with the materials to do so yourself. <I>Note: Nanotrasen or it's affiliates are not responsible for any sudden memory loss or irreplacable body parts lost due to the operation of such devices, we wish you luck with the research and will be expecting updates immediately.</I>"
+
+/obj/item/weapon/paper/synthtech
+	name = "Information on Synthetic Fabricator Technology"
+	info = "In light of recent research funding, we at <B>Nanotrasen</B> have recently made the decision to offer our state of the art stations a chance at trying out new technology before it's released to the public. Unfortunately due to the unexpected loss of our most skilled station technicians, we have been unable to proceed with the promised construction and have instead decided to provide you with the materials to do so yourself. <I>Note: Nanotrasen or it's affiliates are not responsible for any sudden memory loss or irreplacable body parts lost due to the operation of such devices, we wish you luck with the research and will be expecting updates immediately.</I>"
