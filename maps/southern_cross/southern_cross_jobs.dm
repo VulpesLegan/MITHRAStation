@@ -81,8 +81,8 @@ var/const/access_explorer = 43
 	selection_color = "#515151"
 	idtype = /obj/item/weapon/card/id/civilian/pilot
 	economic_modifier = 5 //VOREStation Edit
-	access = list(access_pilot) //VOREStation Edit
-	minimal_access = list(access_pilot) //VOREStation Edit
+	access = list(access_pilot, access_eva) //MITHRAstation Edit
+	minimal_access = list(access_pilot, access_eva) //Mithrastation Edit
 	outfit_type = /decl/hierarchy/outfit/job/pilot
 
 /datum/job/explorer
