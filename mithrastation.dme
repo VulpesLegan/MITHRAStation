@@ -2955,4 +2955,11 @@
 #include "maps\submaps\surface_submaps\wilderness\wilderness.dm"
 #include "maps\submaps\surface_submaps\wilderness\wilderness_areas.dm"
 #include "maps\~map_system\maps.dm"
+#include "modular_mithra\code\game\objects\balls.dm"
+#include "modular_mithra\code\game\objects\items\weapons\tools.dm"
+#include "modular_mithra\code\modules\clothing\glasses\glasses.dm"
+#include "modular_mithra\loadout\loadout_eyes.dm"
+#include "modular_mithra\loadout\loadout_general.dm"
+#include "modular_mithra\loadout\loadout_head.dm"
+#include "modular_mithra\loadout\loadout_suit.dm"
 // END_INCLUDE
