@@ -22,6 +22,6 @@
 
 	firemodes = list(
 		list(mode_name="disable", burst=3, fire_delay=null, move_delay=4, burst_accuracy=list(0,0,0), dispersion=list(0.0, 0.2, 0.5), projectile_type=/obj/item/projectile/beam/stun/disabler, modifystate="multiphasedis", charge_cost = 100),
-		list(mode_name="stun", burst=1, projectile_type=/obj/item/projectile/beam/stun, modifystate="multiphasestun", charge_cost = 480),
+		list(mode_name="stun", burst=1, projectile_type=/obj/item/projectile/energy/electrode/goldenbolt, modifystate="multiphasestun", charge_cost = 480),
 		list(mode_name="lethal", burst=1, projectile_type=/obj/item/projectile/beam, modifystate="multiphasekill", charge_cost = 240),
 		)
