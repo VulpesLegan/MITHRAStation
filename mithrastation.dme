@@ -2963,4 +2963,7 @@
 #include "modular_mithra\loadout\loadout_general.dm"
 #include "modular_mithra\loadout\loadout_head.dm"
 #include "modular_mithra\loadout\loadout_suit.dm"
+#include "modular_mithra\multiphase\gun.dm"
+#include "modular_mithra\multiphase\locker.dm"
+#include "modular_mithra\multiphase\projectile.dm"
 // END_INCLUDE
