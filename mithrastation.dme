@@ -657,7 +657,6 @@
 #include "code\game\jobs\job\security.dm"
 #include "code\game\jobs\job\silicon.dm"
 #include "code\game\jobs\job\special.dm"
-#include "code\game\jobs\job\z_all_jobs_vr.dm"
 #include "code\game\machinery\adv_med.dm"
 #include "code\game\machinery\adv_med_vr.dm"
 #include "code\game\machinery\ai_slipper.dm"
