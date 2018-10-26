@@ -304,7 +304,7 @@
 	owner = 1
 	if(new_name)
 		src.name += " ([new_name])"
-		desc += "\nVALID THROUGH END OF: [time2text(world.timeofday, "Month") +" "+ num2text(text2num(time2text(world.timeofday, "YYYY"))+544)]\nREGISTRANT: [new_name]"
+		desc += "\nVALID THROUGH END OF: [time2text(world.timeofday, "Month") +" "+ num2text(text2num(time2text(world.timeofday, "YYYY"))+546)]\nREGISTRANT: [new_name]" //Mithra Addition
 
 #undef DAM_SCALE_FACTOR
 #undef METAL_PER_TICK
