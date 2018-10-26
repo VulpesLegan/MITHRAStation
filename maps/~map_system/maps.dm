@@ -56,7 +56,6 @@ var/list/all_maps = list()
 	var/list/holomap_offset_y = list()
 	var/list/holomap_legend_x = list()
 	var/list/holomap_legend_y = list()
-	var/list/meteor_strike_areas	// VOREStation Edit - Areas meteor strikes may choose to hit.
 
 	var/station_name  = "BAD Station"
 	var/station_short = "Baddy"
