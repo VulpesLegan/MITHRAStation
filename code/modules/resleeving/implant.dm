@@ -10,12 +10,12 @@
 	icon = 'icons/vore/custom_items_vr.dmi'
 	icon_state = "backup_implant"
 
-/obj/item/weapon/implant/backup/get_data()
+/obj/item/weapon/implant/backup/get_data()	//MITHRA change - Important notes now references an "Employment Contract Form 40B, Clause 2c" rather than KHI.
 	var/dat = {"
 <b>Implant Specifications:</b><BR>
 <b>Name:</b> [using_map.company_name] Employee Backup Implant<BR>
 <b>Life:</b> ~8 hours.<BR>
-<b>Important Notes:</b> Implant is life-limited due to KHI licensing restrictions. Dissolves into harmless biomaterial after around ~8 hours, the typical work shift.<BR>
+<b>Important Notes:</b> Implant is life-limited due to restrictions outlined within Employment Contract Form 40B, Clause 2c. Dissolves into harmless biomaterial after around ~8 hours, the typical work shift.<BR>
 <HR>
 <b>Implant Details:</b><BR>
 <b>Function:</b> Contains a small swarm of nanobots that perform neuron scanning to create mind-backups.<BR>
@@ -134,7 +134,7 @@
 		new /obj/item/weapon/implantcase/backup(src)
 	new /obj/item/weapon/implanter(src)
 
-//Purely for fluff
+//Purely for fluff MITHRA edit - fuck khi
 /obj/item/weapon/implant/backup/full
-	name = "khi backup implant"
-	desc = "A normal KHI wireless cortical stack with neutrino and QE transmission for constant-stream consciousness upload."
+	name = "advanced backup implant"
+	desc = "An advanced wireless cortical stack with neutrino and QE transmission for constant-stream consciousness upload."
