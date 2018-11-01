@@ -79,9 +79,9 @@ var/const/access_explorer = 43
 	supervisors = "the head of personnel"
 	selection_color = "#515151"
 	idtype = /obj/item/weapon/card/id/civilian/pilot
-	economic_modifier = 5
-	access = list(access_pilot, access_cargo, access_mining, access_mining_station)
-	minimal_access = list(access_pilot, access_cargo, access_mining, access_mining_station)
+	economic_modifier = 5 //VOREStation Edit
+	access = list(access_pilot, access_eva, access_external_airlocks, access_cargo, access_mining, access_mining_station) //MITHRAstation Edit
+	minimal_access = list(access_pilot, access_eva, access_external_airlocks, access_cargo, access_mining, access_mining_station) //Mithrastation Edit
 	outfit_type = /decl/hierarchy/outfit/job/pilot
 
 /datum/job/explorer

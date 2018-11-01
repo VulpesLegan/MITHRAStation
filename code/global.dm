@@ -39,7 +39,7 @@ var/href_logfile		= null
 // var/const/starsys_name	= "Vir"
 var/const/game_version	= "MITHRAStation"
 var/changelog_hash		= ""
-var/game_year			= (text2num(time2text(world.realtime, "YYYY")) + 546)
+var/game_year			= (text2num(time2text(world.realtime, "YYYY")) + 546) //Mithra Addition
 var/round_progressing = 1
 
 var/master_mode       = "extended" // "extended"

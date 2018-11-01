@@ -42,7 +42,7 @@
 	fire_icon_state = "generic" // Humanoid is too big for them and spriting a new one is really annoying.
 
 	slowdown = -1
-	item_slowdown_mod = 2	// Tiny birds don't like heavy things
+	//item_slowdown_mod = 2	// Mithra Edit: Teshari are already nerfed to hell
 	snow_movement = -2	// Ignores light snow
 
 	total_health = 75	// Increased from 50 to make them less super killable
