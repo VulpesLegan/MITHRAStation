@@ -99,7 +99,7 @@ var/list/global/map_templates = list()
 	//initialize things that are normally initialized after map load
 	initTemplateBounds(bounds)
 	log_game("Z-level [name] loaded at at [x],[y],[world.maxz]")
-	on_map_loaded(world.maxz) //VOREStation Edit
+	/* on_map_loaded(world.maxz) */ //Mithra Addition
 	return TRUE
 
 /datum/map_template/proc/load(turf/T, centered = FALSE, orientation = SOUTH)
