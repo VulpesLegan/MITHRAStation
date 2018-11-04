@@ -13,6 +13,7 @@
 	materials = list(DEFAULT_WALL_MATERIAL = 2000, "glass" = 2000)
 	build_path = /obj/item/weapon/implantcase/backup
 
+/* Mithra edit: makes sizegun and bluespace jumpsuit unobtainable through research
 /datum/design/item/weapon/sizegun
 	name = "Size gun"
 	id = "sizegun"
@@ -21,6 +22,7 @@
 	build_path = /obj/item/weapon/gun/energy/sizegun
 	sort_string = "TAAAB"
 
+
 /datum/design/item/bluespace_jumpsuit
 	name = "Bluespace jumpsuit"
 	id = "bsjumpsuit"
@@ -28,6 +30,9 @@
 	materials = list(DEFAULT_WALL_MATERIAL = 4000, "glass" = 4000)
 	build_path = /obj/item/clothing/under/bluespace
 	sort_string = "TAAAC"
+
+
+/End of Mithra Edit	*/
 
 /datum/design/item/sleevemate
 	name = "SleeveMate 3700"

@@ -38,6 +38,7 @@
 ///////////////////////////////////////////////
 /////////////////// Stage 3 ///////////////////
 
+/* MITHRA edit: removes size disease
 /datum/disease2/effect/size
 	name = "Mass Revectoring"
 	stage = 3
@@ -47,6 +48,7 @@
 		var/newsize = rand (25, 200)
 		mob.resize(newsize/100)
 		viewers(mob) << "<span class='warning'>[mob.name] suddenly changes size!</span>"
+/End of Mithra edit */
 
 /datum/disease2/effect/flip
 	name = "Flipponov's Disease"

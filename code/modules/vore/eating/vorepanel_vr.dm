@@ -641,10 +641,10 @@
 			selected.bulge_size = (new_bulge/100)
 
 	if(href_list["b_grow_shrink"])
-		var/new_grow = input(user, "Choose the size that prey will be grown/shrunk to, ranging from 25% to 200%", "Set Growth Shrink Size.", selected.shrink_grow_size) as num|null
+		var/new_grow = input(user, "Choose the size that prey will be grown/shrunk to, ranging from 75% to 125%", "Set Growth Shrink Size.", selected.shrink_grow_size) as num|null //Mithra edit: restricts sizing
 		if (new_grow == null)
 			return
-		if (!IsInRange(new_grow,25,200))
+		if (!IsInRange(new_grow,75,125)) //Mithra edit: restricts sizing
 			selected.shrink_grow_size = 1 //Set it to the default
 			to_chat(user,"<span class='notice'>Invalid size.</span>")
 		else if(new_grow)
