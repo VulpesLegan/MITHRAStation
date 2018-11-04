@@ -1,7 +1,11 @@
 //Tweaked existing vendors
+
+/* MITHRA EDIT: Makes size shrooms unobtainable through normal means
+
 /obj/machinery/vending/hydroseeds/New()
 	products += list(/obj/item/seeds/shrinkshroom = 3,/obj/item/seeds/megashroom = 3)
 	..()
+/END OF MITHRA EDIT */
 
 /obj/machinery/vending/security/New()
 	products += list(/obj/item/weapon/gun/energy/taser = 8,/obj/item/weapon/gun/energy/stunrevolver = 4,

@@ -309,8 +309,8 @@
 		return
 
 	if(href_list["size_multiplier"])
-		var/new_size = input(user, "Choose your character's size, ranging from 25% to 200%", "Character Preference") as num|null
-		if(new_size && IsInRange(new_size,25,200))
+		var/new_size = input(user, "Choose your character's size, ranging from 75% to 125%", "Character Preference") as num|null
+		if(new_size && IsInRange(new_size,75,125))
 			active_br.sizemult = (new_size/100)
 			preview_icon = null
 		return 1

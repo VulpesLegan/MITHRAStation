@@ -124,6 +124,7 @@
 	list_pos = NIF_SIZECHANGE
 	cost = 750
 	wear = 6
+	vended = FALSE //MithraEdit: Makes the sizechange NIF unobtainable through normal means
 
 	activate()
 		if((. = ..()))

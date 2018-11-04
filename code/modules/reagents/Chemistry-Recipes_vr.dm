@@ -9,6 +9,7 @@
 	catalysts = list("phoron" = 5)
 	result_amount = 5
 
+/* MITHRA Edit: Makes sizechems unobtainable from chemistry
 /datum/chemical_reaction/macrocillin
 	name = "Macrocillin"
 	id = "macrocillin"
@@ -32,6 +33,7 @@
 	// POLARISTODO requires_heating = 1
 	required_reagents = list("sizeoxadone" = 20, "leporazine" = 20)
 	result_amount = 1
+*/
 
 /datum/chemical_reaction/dontcrossthebeams
 	name = "Don't Cross The Beams"
