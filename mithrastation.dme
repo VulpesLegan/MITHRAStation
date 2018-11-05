@@ -2959,6 +2959,7 @@
 #include "modular_mithra\code\modules\clothing\glasses\glasses.dm"
 #include "modular_mithra\code\modules\paperwork\paper.dm"
 #include "modular_mithra\code\modules\projectiles\guns\energy\laser.dm"
+#include "modular_mithra\flatlandzorrenfix\override.dm"
 #include "modular_mithra\loadout\loadout_eyes.dm"
 #include "modular_mithra\loadout\loadout_general.dm"
 #include "modular_mithra\loadout\loadout_head.dm"
