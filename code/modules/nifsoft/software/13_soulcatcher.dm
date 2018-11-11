@@ -55,14 +55,14 @@
 			nif.human.verbs -= /mob/living/carbon/human/proc/nme
 
 	proc/save_settings()
-		if(!nif)
-			return FALSE
+		if(!nif)			//Mithra edit: null check
+			return FALSE		//Mithra edit: null check
 		nif.save_data["[list_pos]"] = inside_flavor
 		return TRUE
 
 	proc/load_settings()
-		if(!nif)
-			return FALSE
+		if(!nif)			//Mithra edit: null check
+			return FALSE		//Mithra edit: null check
 		var/load = nif.save_data["[list_pos]"]
 		if(load)
 			inside_flavor = load
