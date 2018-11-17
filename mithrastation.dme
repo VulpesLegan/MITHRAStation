@@ -2969,4 +2969,6 @@
 #include "modular_mithra\multiphase\gun.dm"
 #include "modular_mithra\multiphase\locker.dm"
 #include "modular_mithra\multiphase\projectile.dm"
+#include "modular_mithra\radio_panic_button\radio.dm"
+#include "modular_mithra\radio_panic_button\encryption_keys.dm"
 // END_INCLUDE
