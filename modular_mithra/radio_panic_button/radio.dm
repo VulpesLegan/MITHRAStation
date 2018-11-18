@@ -11,10 +11,6 @@
 	var/panic_mic_state
 	var/panic_frequency_lock = FALSE		//Is the frequency locked because of us?
 
-/obj/item/device/radio/headset
-	can_toggle_emergency_mode = FALSE		//regular headsets don't get a panic function.
-	action_button_name = ""		//no panic alarm, so no helpful icon.
-
 /obj/item/device/radio/ui_action_click()
 	panic_alarm(usr)
 
@@ -119,3 +115,45 @@
 			panic_frequency_lock = FALSE
 			freqlock = FALSE
 		return TRUE
+		
+// Headsets
+// code/game/objects/items/devices/radio/headset.dm
+
+/obj/item/device/radio/headset
+	can_toggle_emergency_mode = FALSE		//regular headsets don't get a panic function.
+	action_button_name = ""		//no panic alarm, so no helpful icon.
+
+/obj/item/device/radio/headset/heads/ai_integrated
+	can_toggle_emergency_mode = FALSE		//AI has tons of channels it can scream on.
+	action_button_name = ""
+
+//This is the admin spawned one. It can access every channel.
+//Therefore, to give the admins as much room to do what they need for storytelling, we'll give it a panic alarm anyway.
+//It acts like a regular panic alarm, though, and will still lock out the frequency adjusting.
+/obj/item/device/radio/headset/omni
+	can_toggle_emergency_mode = TRUE
+	action_button_name = "Toggle Emergency Function"
+
+
+// Work in progress. Do not uncomment yet.
+
+/*
+
+// Due to the nature of their job, sec officers and CDir should get a panic function anyway.
+// Sec chases down criminals and are at risk of ambush.
+
+/obj/item/device/radio/headset/headset_sec
+	can_toggle_emergency_mode = TRUE
+	action_button_name = "Toggle Emergency Function"
+
+// CDir is a high value target due to the nature of his job. Plus, all-access is sweet.
+/obj/item/device/radio/headset/heads/captain
+	can_toggle_emergency_mode = TRUE
+	action_button_name = "Toggle Emergency Function"
+
+//HoP is a high value target due to the fact that they can be acting CDir and have a machine that can grant all-access.
+/obj/item/device/radio/headset/heads/hop
+	can_toggle_emergency_mode = TRUE
+	action_button_name = "Toggle Emergency Function"
+
+*/
