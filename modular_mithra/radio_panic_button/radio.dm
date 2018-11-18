@@ -47,15 +47,15 @@
 
 	if(user.incapacitated & INCAPACITATION_DEFAULT)	//if we are restrained or fully buckled, it'll be a little bit harder to use our panic button.
 		user.visible_message("<span class='warning'>[user] begins to reach for [src].</span>","<span class='notice'>You begin reaching for the panic button on [src].</span>")		//Give the hostage taker a chance to stop us.
-		if(do_after(user, 5 SECONDS)
-			toggle_panic_button(mob/user, TRUE, FALSE)
+		if(do_after(user, 5 SECONDS))
+			toggle_panic_button(user, TRUE, FALSE)
 			return TRUE
 		else		//you were moved, so sad...
 			to_chat(user,"<span class='warning'>You fail to activate \the [src]'s emergency function.</span>")
 			return FALSE
 
 	else		//we're not under arrest, so we get to go ahead and just press the damn thing.
-		toggle_panic_button(mob/user, TRUE, FALSE)
+		toggle_panic_button(user, TRUE, FALSE)
 		return TRUE
 
 
