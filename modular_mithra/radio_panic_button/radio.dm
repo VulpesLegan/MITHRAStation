@@ -20,11 +20,9 @@
 	set category = "Object"
 	set src in usr
 	
-	if(!panic_enabled)		//no sense in having this proc if it has no panic alarm...
-		verbs -= /obj/item/device/radio/verb/emergency
+	if(can_toggle_emergency_mode)		//can we even toggle it?
+		panic_alarm(usr)		//Whether or not we can activate it will be checked in the checks.
 
-	else
-		panic_alarm(usr)
 
 //Panic alarm proc. Called when someone toggles the emergency function on their radio.
 /obj/item/device/radio/proc/panic_alarm(mob/user, bypass_checks = FALSE)
@@ -36,6 +34,7 @@
 
 	if(!bypass_checks)		//Should the need arise, admins can bypass the checks (e.g. for events).
 		if(!can_toggle_emergency_mode)		//can we even toggle it?
+			to_chat(user, "<span class='warning'>This radio does not have an emergency function you can activate.</span>")
 			return FALSE
 
 		if(!(ishuman(user) || issilicon(user)))		//ghosts, simplemobs, etc
@@ -158,6 +157,11 @@
 /obj/item/device/radio/intercom
 	can_toggle_emergency_mode = FALSE		//Intercoms get no panic function, since players can be dragged away.
 	action_button_name = ""		//See above.
+	
+// Borgs do not get a panic function.
+/obj/item/device/radio/borg
+	can_toggle_emergency_mode = FALSE
+	action_button_name = ""// code/game/objects/items/devices/radio/radio.dm
 
 //This is the admin spawned one. It can access every channel.
 //Therefore, to give the admins as much room to do what they need for storytelling, we'll give it a panic alarm anyway.
