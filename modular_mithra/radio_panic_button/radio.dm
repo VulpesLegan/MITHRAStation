@@ -4,6 +4,7 @@
 	action_button_name = "Toggle Emergency Function"		//helpful icon at top of screen.
 	var/can_toggle_emergency_mode = TRUE		//Can the panic function be toggled?
 	var/panic_enabled = FALSE
+	var/panic_mode_will_turn_off_speaker = TRUE
 	
 	//Storage variables.
 	var/panic_prev_frequency
@@ -13,6 +14,17 @@
 
 /obj/item/device/radio/ui_action_click()
 	panic_alarm(usr)
+
+/obj/item/device/radio/verb/emergency()
+	set name = "Toggle Emergency Function"
+	set category = "Object"
+	set src in usr
+	
+	if(!panic_enabled)		//no sense in having this proc if it has no panic alarm...
+		verbs -= /obj/item/device/radio/verb/emergency
+
+	else
+		panic_alarm(usr)
 
 //Panic alarm proc. Called when someone toggles the emergency function on their radio.
 /obj/item/device/radio/proc/panic_alarm(mob/user, bypass_checks = FALSE)
@@ -43,7 +55,7 @@
 
 	if(user.incapacitated() & INCAPACITATION_DEFAULT)	//if we are restrained or fully buckled, it'll be a little bit harder to use our panic button.
 		user.visible_message("<span class='warning'>[user] begins to reach for [src].</span>","<span class='notice'>You begin reaching for the panic button on [src].</span>")		//Give the hostage taker a chance to stop us.
-		if(do_after(user, 5 SECONDS))
+		if(do_after(user, 5 SECONDS, incapacitation_flags = INCAPACITATION_DISABLED))
 			toggle_panic_alarm(user, TRUE, FALSE)
 			return TRUE
 		else		//you were moved, so sad...
@@ -87,33 +99,48 @@
 		panic_speaker_state = listening		//speaker state
 		panic_mic_state = broadcasting		//mic state
 		
-		//We also want to check and see if the frequency is locked. If not, we should lock it and make a note somewhere that we were the ones to lock it.
-		if(!freqlock)
-			freqlock = TRUE
-			panic_frequency_lock = TRUE
 
 		//now let's shut off our speaker, in case we're already on the panic alarm channel, so as not to tip off our assailants, and then broadcast a warning to those listening in that we're in trouble.
-		listening = FALSE
-		global_announcer.autosay("Radio emergency function activated by [user] in [get_area(src)]. Hotmike in 2 seconds.", "[src]", "Emergency")
+		global_announcer.autosay("Radio emergency function activated by [user] in [get_area(src)]. Microphone is now hot.", "[src]", "Emergency")
 		
-		//wait 2 seconds before we hotmike.
-		spawn(20)
+
+		//We also want to check and see if the frequency is locked. If not, we should lock it and make a note somewhere that we were the ones to lock it.
+		if(!freqlock)
+			set_frequency(PANIC_FREQ)
+			freqlock = TRUE
+			panic_frequency_lock = TRUE
+		else		//it's locked, so we need to unlock it, change it, and re-lock it
+			freqlock = FALSE
 			frequency = PANIC_FREQ
-			broadcasting = TRUE			//Hotmike so emergency responders can hear what's going on around you, e.g. shouting
+			freqlock = TRUE
+			panic_frequency_lock = FALSE	//a redundancy.
+
+		broadcasting = TRUE			//Hotmike so emergency responders can hear what's going on around you, e.g. shouting
+
+		if(panic_mode_will_turn_off_speaker)	//If we are told to disable the speaker before we go into panic mode, do it
+			listening = FALSE
+
+
+
 		return TRUE
 	else		//We're now disabled.
 		//Let everyone know the emergency has passed.
 		global_announcer.autosay("Radio emergency function deactivated by [user].", "[src]", "Emergency")
 		
 		//recall our previous frequency, mic status, and speaker status.
-		frequency = panic_prev_frequency
 		listening = panic_speaker_state
 		broadcasting = panic_mic_state
 		
 		//Check if the frequency was locked because of us. If so, clear that flag and unlock it.
-		if(panic_frequency_lock)
-			panic_frequency_lock = FALSE
-			freqlock = FALSE
+		if(freqlock)
+			if(panic_frequency_lock)		//It's ours, unlock it.
+				panic_frequency_lock = FALSE
+				freqlock = FALSE
+				set_frequency(panic_prev_frequency)
+			else		//Not ours. Unlock, set back, and lock again.
+				freqlock = FALSE
+				set_frequency(panic_prev_frequency)
+				freqlock = TRUE
 		return TRUE
 		
 // Headsets
@@ -122,10 +149,15 @@
 /obj/item/device/radio/headset
 	can_toggle_emergency_mode = FALSE		//regular headsets don't get a panic function.
 	action_button_name = ""		//no panic alarm, so no helpful icon.
+	panic_mode_will_turn_off_speaker = FALSE		//These get to hear what they broadcast, since they don't broadcast over many tiles.
 
 /obj/item/device/radio/headset/heads/ai_integrated
 	can_toggle_emergency_mode = FALSE		//AI has tons of channels it can scream on.
 	action_button_name = ""
+
+/obj/item/device/radio/intercom
+	can_toggle_emergency_mode = FALSE		//Intercoms get no panic function, since players can be dragged away.
+	action_button_name = ""		//See above.
 
 //This is the admin spawned one. It can access every channel.
 //Therefore, to give the admins as much room to do what they need for storytelling, we'll give it a panic alarm anyway.
@@ -135,25 +167,40 @@
 	action_button_name = "Toggle Emergency Function"
 
 
-// Work in progress. Do not uncomment yet.
+// Work in progress.
 
-/*
 
-// Due to the nature of their job, sec officers and CDir should get a panic function anyway.
-// Sec chases down criminals and are at risk of ambush.
+// Headsets are a special case here. They can enable the panic alarm should they
+// need to, but they lose the common channel since there's currently not a way
+// to broadcast just to the panic channel without changing the frequency. So, we
+// do just that. However, we don't lock out their speaker settings since they do
+// not broadcast over distance like shortwave radios do. They'll be able to hear
+// their own cries for help.
 
-/obj/item/device/radio/headset/headset_sec
+
+// Due to the nature of their job, sec officers, HoP, and CDir should have a
+// panic function on their radios.
+
+// Sec chases down criminals and are at risk of ambush. They are a higher-value
+// target because they have (some) access to weaponry - mostly LTL.
+/obj/item/device/radio/headset/headset_sec		//Rank-and-file officers
 	can_toggle_emergency_mode = TRUE
 	action_button_name = "Toggle Emergency Function"
 
-// CDir is a high value target due to the nature of his job. Plus, all-access is sweet.
+/obj/item/device/radio/headset/heads/hos		//Head of Security
+	can_toggle_emergency_mode = TRUE
+	action_button_name = "Toggle Emergency Function"
+
+// CDir is a high value target due to the nature of his job. His headset has
+// access to all channels, his ID has access to the entire station, his room has
+// a very powerful recharging gun.
 /obj/item/device/radio/headset/heads/captain
 	can_toggle_emergency_mode = TRUE
 	action_button_name = "Toggle Emergency Function"
 
-//HoP is a high value target due to the fact that they can be acting CDir and have a machine that can grant all-access.
+// HoP is a high value target due to the nature of his job. His ID console can 
+// create IDs with CDir access, and he becomes the acting CDir should a need for
+// one arise. He is also responsible for Ian's protection.
 /obj/item/device/radio/headset/heads/hop
 	can_toggle_emergency_mode = TRUE
 	action_button_name = "Toggle Emergency Function"
-
-*/
