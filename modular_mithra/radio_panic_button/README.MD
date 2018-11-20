@@ -2,7 +2,7 @@
 
 ## *Quick start guide*
 1. Press the UI icon, or right-click the radio you wish to activate the emergency function on and select "Toggle Emergency Function".
-2. The radio will change channel to the emergency channel, notify the channel that you have activated your panic alarm, and the microphone will be hot - as you speak or people around you speak, it will relay to the emergency channel.
+2. If the radio has an emergency function available, the radio will change channel to the emergency channel, notify the channel that you have activated your panic alarm, and the microphone will be hot - as you speak or people around you speak, it will relay to the emergency channel.
 3. Press the UI icon again, or right-click and select "Toggle Emergency Function" again, to deactivate it.
 
 ## *In-depth Explanations - Frontend*
