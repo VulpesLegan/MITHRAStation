@@ -76,7 +76,7 @@ var/const/NETWORK_MAIN_OUTPOST = "Main Outpost"
 	)
 
 /obj/machinery/telecomms/receiver/preset_right/southerncross
-	freq_listening = list(AI_FREQ, SCI_FREQ, MED_FREQ, SUP_FREQ, SRV_FREQ, COMM_FREQ, ENG_FREQ, SEC_FREQ, ENT_FREQ, EXP_FREQ)
+	freq_listening = list(AI_FREQ, SCI_FREQ, MED_FREQ, SUP_FREQ, SRV_FREQ, COMM_FREQ, ENG_FREQ, SEC_FREQ, ENT_FREQ, EXP_FREQ, PANIC_FREQ)	//mithra edit - panic button.
 
 /obj/machinery/telecomms/bus/preset_two/southerncross
 	freq_listening = list(SUP_FREQ, SRV_FREQ, EXP_FREQ)
@@ -100,5 +100,6 @@ var/const/NETWORK_MAIN_OUTPOST = "Main Outpost"
 		num2text(SCI_FREQ) = list(access_tox,access_robotics,access_xenobiology),
 		num2text(SUP_FREQ) = list(access_cargo),
 		num2text(SRV_FREQ) = list(access_janitor, access_hydroponics),
-		num2text(EXP_FREQ) = list(access_explorer)
+		num2text(EXP_FREQ) = list(access_explorer),
+		num2text(PANIC_FREQ) = list(access_medical_equip,access_security)	//mithra edit - panic button.
 	)
