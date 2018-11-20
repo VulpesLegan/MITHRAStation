@@ -20,8 +20,9 @@
 	set category = "Object"
 	set src in usr
 	
-	if(can_toggle_emergency_mode)		//can we even toggle it?
-		panic_alarm(usr)		//Whether or not we can activate it will be checked in the checks.
+	
+	panic_alarm(usr)		//Whether or not we can activate it will be checked in the checks.
+
 
 
 //Panic alarm proc. Called when someone toggles the emergency function on their radio.
@@ -163,17 +164,6 @@
 	can_toggle_emergency_mode = FALSE
 	action_button_name = ""// code/game/objects/items/devices/radio/radio.dm
 
-//This is the admin spawned one. It can access every channel.
-//Therefore, to give the admins as much room to do what they need for storytelling, we'll give it a panic alarm anyway.
-//It acts like a regular panic alarm, though, and will still lock out the frequency adjusting.
-/obj/item/device/radio/headset/omni
-	can_toggle_emergency_mode = TRUE
-	action_button_name = "Toggle Emergency Function"
-
-
-// Work in progress.
-
-
 // Headsets are a special case here. They can enable the panic alarm should they
 // need to, but they lose the common channel since there's currently not a way
 // to broadcast just to the panic channel without changing the frequency. So, we
@@ -206,5 +196,30 @@
 // create IDs with CDir access, and he becomes the acting CDir should a need for
 // one arise. He is also responsible for Ian's protection.
 /obj/item/device/radio/headset/heads/hop
+	can_toggle_emergency_mode = TRUE
+	action_button_name = "Toggle Emergency Function"
+
+// Admin spawned
+
+// This is the admin spawned one. It can access every channel. Therefore, to 
+// give the admins as much room to do what they need for story-telling, we'll 
+// give it a panic alarm anyway. It acts like a regular panic alarm, though, and
+// will still lock out the frequency adjusting.
+/obj/item/device/radio/headset/omni
+	can_toggle_emergency_mode = TRUE
+	action_button_name = "Toggle Emergency Function"
+
+// ERT and Centcomm headsets. They probably don't need it since they're checking
+// on or saving your crew, but since they're admin spawned, we'll give 'em it
+// anyways, just in case.
+/obj/item/device/radio/headset/centcom
+	can_toggle_emergency_mode = TRUE
+	action_button_name = "Toggle Emergency Function"
+
+// Nanotrasen representatives. They're a high value target, due to the fact that
+// they're supposed to be corporate executives, and kidnapping or killing one
+// would be a high-profile event that NT's competitors would love to capitalise
+// on. Plus, admin spawned, so we'll give 'em one.
+/obj/item/device/radio/headset/nanotrasen
 	can_toggle_emergency_mode = TRUE
 	action_button_name = "Toggle Emergency Function"
