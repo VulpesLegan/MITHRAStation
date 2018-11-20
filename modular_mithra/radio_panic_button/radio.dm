@@ -60,7 +60,7 @@
 			return TRUE
 		else		//you were moved, so sad...
 			to_chat(user,"<span class='warning'>You fail to activate \the [src]'s emergency function.</span>")
-			return FALSE
+			return null	//for proc feedback
 
 	else		//we're not under arrest, so we get to go ahead and just press the damn thing.
 		toggle_panic_alarm(user, TRUE, FALSE)
