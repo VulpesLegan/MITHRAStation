@@ -27,7 +27,7 @@
 	
 	//Now let's make our LED coloured.
 	if(panic_enabled)		//if we're in panic alarm
-		if(!receiving)
+		if(!listening)
 			led_state = "ledred-panic"		//Isophase, red.
 		else
 			led_state = "ledred-solid"		//Solid red
@@ -37,7 +37,7 @@
 		led_state = "ledgreen-hotmic"			//Flashing, green
 		
 	//if our radio is even on
-	else if(receiving)
+	else if(listening)
 		led_state = "ledamber-standby"			//Double-flashing, amber
 
 	else
