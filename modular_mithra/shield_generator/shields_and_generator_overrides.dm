@@ -1,7 +1,7 @@
 // /code/modules/shieldgen/shield_gen.dm
 
 /obj/machinery/shield_gen		//Bubble Shield Generator
-	max_strengthen_rate = 0.8		//originally 0.5
+	max_strengthen_rate = 0.5		//originally 0.5
 	energy_conversion_rate = 0.0009		//originally 6/10'000
 	max_field_strength = 12		//originally 10; would be 12.5, but I don't want
 								//to deal with rounding.
