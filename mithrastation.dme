@@ -2966,9 +2966,11 @@
 #include "modular_mithra\lore_override\glasses.dm"
 #include "modular_mithra\lore_override\guns.dm"
 #include "modular_mithra\lore_override\sleevecard.dm"
+#include "modular_mithra\motorola_radio\radiola.dm"
 #include "modular_mithra\multiphase\gun.dm"
 #include "modular_mithra\multiphase\locker.dm"
 #include "modular_mithra\multiphase\projectile.dm"
-#include "modular_mithra\radio_panic_button\radio.dm"
 #include "modular_mithra\radio_panic_button\encryption_keys.dm"
+#include "modular_mithra\radio_panic_button\radio.dm"
+#include "modular_mithra\shield_generator\shields_and_generator_overrides.dm"
 // END_INCLUDE

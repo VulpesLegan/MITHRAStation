@@ -22,6 +22,7 @@
 	var/strength = 0 // in Renwicks
 	var/ticks_recovering = 10
 	var/max_strength = 10
+	var/impact_divisor = 800		//Mithra Edit: Make it a var so I can overwrite in another file and make all the controls in one easy place!
 
 /obj/effect/energy_field/New(var/newloc, var/new_gen)
 	..(newloc)
@@ -63,7 +64,7 @@
 
 /obj/effect/energy_field/handle_meteor_impact(var/obj/effect/meteor/meteor)
 	var/penetrated = TRUE
-	adjust_strength(-max((meteor.wall_power * meteor.hits) / 800, 0)) // One renwick (strength var) equals one r-wall for the purposes of meteor-stopping.
+	adjust_strength(-max((meteor.wall_power * meteor.hits) / impact_divisor, 0)) // One renwick (strength var) equals one r-wall for the purposes of meteor-stopping.	//Mithra Edit: Change 800 to divisor var so I can overwrite in modular.
 	sleep(1)
 	if(density) // Check if we're still up.
 		penetrated = FALSE
