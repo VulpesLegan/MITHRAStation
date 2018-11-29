@@ -18,7 +18,7 @@
 */
 
 /obj/machinery/shield_gen/external/advanced		//Advanced Hull Shield Generator
-		energy_conversion_rate = 0.0018		//originally 12/10'000
+	energy_conversion_rate = 0.0018		//originally 12/10'000
 	max_field_strength = 15		//originally 10
 
 // /code/modules/shieldgen/energy_field.dm
