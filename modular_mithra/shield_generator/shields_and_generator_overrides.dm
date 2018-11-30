@@ -33,3 +33,5 @@
  */
 
 	impact_divisor = 800		//Default: 800
+	explosion_resistance = 250	//equivalent to ten for the purposes of explosion handling
+	
