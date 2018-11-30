@@ -93,6 +93,9 @@
 
 	panic_enabled = !panic_enabled		//toggle panic alarm
 	to_chat(user, "<span class='notice'>You [panic_enabled ? "activate" : "deactivate"] \the [src]'s emergency function.</span>")
+	message_admins("[key_name_admin(user) [panic_enabled ? "activated" : "deactivated"] radio panic alarm at ([loc.x],[loc.y],[loc.z]) (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[loc.x];Y=[loc.y];Z=[loc.z]'>JMP</a>.)")
+	log_game("[key_name_admin(user): Radio panic alarm [panic_enabled ? "activated" : "deactivated"] at ([loc.x],[loc.y],[loc.z]) on radio (\ref[src] \"[src]\").")
+
 	if(panic_enabled)		//We're now enabled.
 		//First things first, let's store our old frequency, mic and speaker states so we can recall them later.
 		panic_prev_frequency = frequency	//frequency
@@ -125,6 +128,7 @@
 		return TRUE
 	else		//We're now disabled.
 		//Let everyone know the emergency has passed.
+
 		global_announcer.autosay("Radio emergency function deactivated by [user].", "[src]", "Emergency")
 		
 		//recall our previous frequency, mic status, and speaker status.
