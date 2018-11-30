@@ -229,7 +229,7 @@
 /obj/effect/meteor/medium/meteor_effect(var/explode)
 	..()
 	if(explode)
-		explosion(src.loc, 0, 1, 2, 3, 0, shaped = TRUE)	//mithra edit
+		explosion_rec(src.loc, power = 3)	//mithra edit
 
 // Large-sized meteors generally pack the most punch, but are more concentrated towards the epicenter.
 /obj/effect/meteor/big
@@ -243,7 +243,7 @@
 /obj/effect/meteor/big/meteor_effect(var/explode)
 	..()
 	if(explode)
-		explosion(src.loc, devastation_range = 2, heavy_impact_range = 4, light_impact_range = 6, flash_range = 12, adminlog = 0, shaped = TRUE)	//mithra edit
+		explosion_rec(src.loc, power = 6)	//mithra edit
 
 // 'Flaming' meteors do less overall damage but are spread out more due to a larger but weaker explosion at the end.
 /obj/effect/meteor/flaming
@@ -257,7 +257,8 @@
 /obj/effect/meteor/flaming/meteor_effect(var/explode)
 	..()
 	if(explode)
-		explosion(src.loc, devastation_range = 1, heavy_impact_range = 2, light_impact_range = 8, flash_range = 16, adminlog = 0, shaped = TRUE)	//mithra edit
+		explosion(src.loc, devastation_range = 0, heavy_impact_range = 0, light_impact_range = 0, flash_range = 16, adminlog = 0)	//mithra edit: we want the beefy flash range.
+		explosion_rec(src.loc, power = 8)		//mithra edit: this is the actual explosion.
 
 // Irradiated meteors do less physical damage but project a ten-tile ranged pulse of radiation upon exploding.
 /obj/effect/meteor/irradiated
@@ -271,7 +272,7 @@
 /obj/effect/meteor/irradiated/meteor_effect(var/explode)
 	..()
 	if(explode)
-		explosion(src.loc, devastation_range = 0, heavy_impact_range = 0, light_impact_range = 4, flash_range = 6, adminlog = 0, shaped = TRUE)		//mithra edit
+		explosion_rec(src.loc, power = 4)		//mithra edit
 	new /obj/effect/decal/cleanable/greenglow(get_turf(src))
 	radiation_repository.radiate(src, 50)
 
@@ -304,9 +305,9 @@
 /obj/effect/meteor/tunguska/meteor_effect(var/explode)
 	..()
 	if(explode)
-		explosion(src.loc, 5, 10, 15, 20, 0, shaped = TRUE)		//mithra edit
+		explosion_rec(src.loc, power = 15)		//mithra edit
 
 /obj/effect/meteor/tunguska/Bump()
 	..()
 	if(prob(20))
-		explosion(src.loc,2,4,6,8, shaped = TRUE)		//mithra edit
+		explosion_rec(src.loc, power = 6)		//mithra edit
