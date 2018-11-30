@@ -114,7 +114,7 @@
 			panic_frequency_lock = TRUE
 		else		//it's locked, so we need to unlock it, change it, and re-lock it
 			freqlock = FALSE
-			frequency = PANIC_FREQ
+			set_frequency(PANIC_FREQ)
 			freqlock = TRUE
 			panic_frequency_lock = FALSE	//a redundancy.
 
