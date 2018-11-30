@@ -258,7 +258,7 @@
 	..()
 	if(explode)
 		explosion(src.loc, devastation_range = 0, heavy_impact_range = 0, light_impact_range = 0, flash_range = 16, adminlog = 0)	//mithra edit: we want the beefy flash range.
-		explosion_rec(src.loc, power = 8)		//mithra edit: this is the actual explosion.
+		explosion_rec(src.loc, power = 4)		//mithra edit: this is the actual explosion. lighter, but the flash range more than makes up for it
 
 // Irradiated meteors do less physical damage but project a ten-tile ranged pulse of radiation upon exploding.
 /obj/effect/meteor/irradiated
