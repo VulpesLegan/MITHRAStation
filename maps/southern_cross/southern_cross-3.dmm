@@ -637,7 +637,7 @@
 "mm" = (/obj/structure/table/marble,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/obj/item/weapon/stool/padded,/turf/simulated/floor/plating,/area/surface/outpost/main/bar)
 "mn" = (/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{dir = 4},/turf/simulated/floor/plating,/area/surface/outpost/main/bar)
 "mo" = (/obj/structure/cable/blue{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{dir = 1},/turf/simulated/floor/plating,/area/surface/outpost/main/bar)
-"mp" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 8},/obj/item/weapon/stock_parts/motor,/turf/simulated/floor/plating,/area/surface/outpost/main/bar)
+"mp" = (/obj/machinery/atmospherics/unary/vent_scrubber/on{dir = 8},null,/turf/simulated/floor/plating,/area/surface/outpost/main/bar)
 "mq" = (/obj/structure/table,/obj/item/stack/material/wood,/obj/item/stack/material/wood,/turf/simulated/floor/plating,/area/surface/outpost/main/bar)
 "mr" = (/obj/structure/cable/heavyduty{icon_state = "1-2"},/turf/simulated/wall/r_wall,/area/surface/outpost/main/corridor)
 "ms" = (/obj/machinery/door/firedoor/border_only,/obj/effect/wingrille_spawn/reinforced,/turf/simulated/floor/plating,/area/surface/outpost/main/corridor)
@@ -1816,3 +1816,4 @@ aaafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafDADADADADA
 aaafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafagafafafafafafafafDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDVDMDWDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDJDJDKDKDJDJDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDQDVDMDWDQDQDQDQDQDQDQDQDQDQDQDQDQDQafafafafafafafafafafafafagafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafafaa
 aaaaaaaaaaaaaaaaabababababababababababababababababababaaaaaaaaaaaaaaaaaaaaaaabababababababababababababababababababababababababababababababababababDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDQDYDYDYDQDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDQDZDZDZDZDZDZDQDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDXDQDYDYDYDQDXDXDXDXDXDXDXDXDXDXDXDXDXababababababababababababababababababababababababababababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaababababababababababababababababababababababababab
 "}
+
